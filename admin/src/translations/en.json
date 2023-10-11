@@ -1,0 +1,6 @@
+{
+  "plugin.name": "Buddy deploy center",
+  "settings.name": "Deploy center",
+  "settings.deploy": "Deployment",
+  "settings.button.trigger": "Trigger"
+}

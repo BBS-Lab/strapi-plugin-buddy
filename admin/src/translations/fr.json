@@ -1,0 +1,6 @@
+{
+  "plugin.name": "Centre de déploiement",
+  "settings.name": "Centre de déploiement",
+  "settings.deploy": "Déploiement",
+  "settings.button.trigger": "Déployer"
+}
