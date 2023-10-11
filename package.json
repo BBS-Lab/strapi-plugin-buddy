@@ -1,6 +1,6 @@
 {
-  "name": "strapi-plugin-buddy",
-  "version": "0.0.0",
+  "name": "@bigbossstudio/strapi-plugin-buddy",
+  "version": "1.0.0",
   "description": "Trigger deployment with buddy webhooks",
   "strapi": {
     "name": "strapi-plugin-buddy",
@@ -46,9 +46,6 @@
   "scripts": {
     "develop": "tsc -p tsconfig.server.json -w",
     "build": "tsc -p tsconfig.server.json"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "license": "MIT"
 }
