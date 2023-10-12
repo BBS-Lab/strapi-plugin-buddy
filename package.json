@@ -1,6 +1,6 @@
 {
   "name": "@bigbossstudio/strapi-plugin-buddy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Trigger deployment with buddy webhooks",
   "strapi": {
     "name": "strapi-plugin-buddy",
