@@ -1,16 +1,18 @@
 import { Strapi } from '@strapi/strapi';
-// import pluginPkg from '../../package.json';
 import axios from 'axios';
+import pluginPkg from '../../package.json';
+
+const name = pluginPkg.strapi.name
 
 export default ({ strapi }: { strapi: Strapi }) => ({
   index(ctx) {
     ctx.body = strapi
-      .plugin('buddy-deploy')
+      .plugin(name)
       .service('myService')
       .getWelcomeMessage();
   },
   async deploy(ctx) {
-    const deployUrl = strapi.plugin('buddy-deploy').config('deployUrl')
+    const deployUrl = strapi.plugin(name).config('deployUrl')
 
     try {
       await axios.post(deployUrl)
@@ -24,7 +26,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
     }
   },
   async progress(ctx) {
-    const badgeUrl = strapi.plugin('buddy-deploy').config('badgeUrl')
+    const badgeUrl = strapi.plugin(name).config('badgeUrl')
 
     try {
       const response = await axios.post(badgeUrl)

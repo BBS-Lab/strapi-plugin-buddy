@@ -1,29 +1,12 @@
 import { prefixPluginTranslations } from '@strapi/helper-plugin';
 
-import pluginPkg from '../../package.json';
 import pluginId from './pluginId';
 import Initializer from './components/Initializer';
-// import PluginIcon from './components/PluginIcon';
+import pluginName from './pluginName';
 
-const name = pluginPkg.strapi.name;
 
 export default {
   register(app: any) {
-    // app.addMenuLink({
-    //   to: `/plugins/${pluginId}`,
-    //   icon: PluginIcon,
-    //   intlLabel: {
-    //     id: `${pluginId}.plugin.name`,
-    //     defaultMessage: 'Buddy deploy',
-    //   },
-    //   Component: async () => {
-    //     const component = await import(/* webpackChunkName: "[request]" */ './pages/App');
-
-    //     return component;
-    //   },
-    //   permissions: [],
-    // });
-
     app.createSettingSection(
       {
         id: pluginId,
@@ -39,7 +22,7 @@ export default {
             defaultMessage: 'Deployment',
           },
           id: pluginId,
-          to: `/settings/${pluginId}`,
+          to: `/settings/${pluginName}`,
           Component: async () => {
             const component = await import(/* webpackChunkName: "[request]" */ './pages/App');
 
@@ -54,7 +37,7 @@ export default {
       id: pluginId,
       initializer: Initializer,
       isReady: false,
-      name,
+      name: pluginName,
     };
 
     app.registerPlugin(plugin);

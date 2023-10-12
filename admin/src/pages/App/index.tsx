@@ -8,14 +8,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { AnErrorOccurred } from '@strapi/helper-plugin';
-import pluginId from '../../pluginId';
 import DeploymentPage from '../DeploymentPage';
+import pluginName from '../../pluginName';
 
 const App = () => {
   return (
     <div>
       <Switch>
-        <Route path={`/settings/${pluginId}`} component={DeploymentPage} exact />
+        <Route path={`/settings/${pluginName}`} component={DeploymentPage} exact />
         <Route component={AnErrorOccurred} />
       </Switch>
     </div>

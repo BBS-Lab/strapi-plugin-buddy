@@ -7,9 +7,9 @@
 import React, { useEffect, useState } from 'react';
 import { Button, BaseHeaderLayout, Layout } from '@strapi/design-system'
 import { getFetchClient } from '@strapi/helper-plugin';
-import pluginId from '../../pluginId';
 import { FormattedMessage } from 'react-intl';
 import getTrad from '../../utils/getTrad';
+import pluginName from '../../pluginName';
 
 const DeploymentPage = () => {
   const [badge, setBadge] = useState<string>('')
@@ -18,7 +18,7 @@ const DeploymentPage = () => {
   const getProgress = async () => {
     try {
       const { post } = getFetchClient();
-      const response = await post(`/${pluginId}/progress`);
+      const response = await post(`/${pluginName}/progress`);
       setBadge(response.data?.data)
     } catch (error) {
       console.error(error)
@@ -28,7 +28,7 @@ const DeploymentPage = () => {
   const triggerDeploy = async () => {
     try {
       const { post } = getFetchClient();
-      await post(`/${pluginId}/deploy`);
+      await post(`/${pluginName}/deploy`);
     } catch (error) {
       console.error(error)
     }
